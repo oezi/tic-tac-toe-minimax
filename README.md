@@ -7,11 +7,11 @@
 Module that given a tic-tac-toe board determines the AI's move and/or returns next state board based on the given board. It has three level of AI's difficulty.
 *Note: Only tested on a 3x3 board*
 
-| Difficulty        | Description           |
-|:-------------:|:-------------:| 
-| Easy      | AI's move is decided solely based on Math.random() | 
-| Hard | AI's move is decided through the minimax algorithm      |
-| Normal      | AI's move has 50/50 chance to be a "Hard difficulty" move or a "Easy difficulty" move       | 
+| Difficulty        |                                              Description                                               |
+|:-------------:|:------------------------------------------------------------------------------------------------------:| 
+| Easy      |                           AI's move is decided solely based on Math.random()                           | 
+| Hard |                           AI's move is decided through the minimax algorithm                           |
+| Normal      | AI's move has 75% chance to be a "Hard difficulty" move or a 25% chance to be a "Easy difficulty" move | 
 
 ##### [DEMO](http://marianoheller.github.io/tic-tac-toe)
 
@@ -89,7 +89,3 @@ returns {
 }
 */
 ```
-### TODO
-
-...
-
