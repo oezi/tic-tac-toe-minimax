@@ -100,25 +100,27 @@ function ComputerMove(board, symbols, difficulty) {
 		return leftMoves[randomIndex];
 	}
 
-	function findNormalMove() {
-		var bestMove = findBestMove();
-		var dumbMove = findEasyMove();
-		return Math.random() < 0.75 ? bestMove : dumbMove;
+	function findNormalMove(chance) {
+		return Math.random() < chance ? findBestMove() : findEasyMove();
 	}
 
 	var ret = -1;
 	switch (difficulty) {
 		case "Easy":
-			ret = findEasyMove();
+			ret = findNormalMove(0);
 			break;
 		case "Normal":
-			ret = findNormalMove();
+			ret = findNormalMove(0.75);
 			break;
 		case "Hard":
-			ret = findBestMove();
+			ret = findNormalMove(1);
 			break;
 		default:
-			throw Error("Difficulty not valid!");
+			if (typeof difficulty === 'number' && difficulty >= 0 && difficulty <= 1) {
+				ret = findNormalMove();
+			} else {
+				throw Error("Difficulty not valid!");
+			}
 	}
 	return ret;
 }

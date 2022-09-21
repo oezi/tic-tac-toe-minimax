@@ -7,11 +7,12 @@
 Module that given a tic-tac-toe board determines the AI's move and/or returns next state board based on the given board. It has three level of AI's difficulty.
 *Note: Only tested on a 3x3 board*
 
-| Difficulty        |                                              Description                                               |
-|:-------------:|:------------------------------------------------------------------------------------------------------:| 
-| Easy      |                           AI's move is decided solely based on Math.random()                           | 
-| Hard |                           AI's move is decided through the minimax algorithm                           |
-| Normal      | AI's move has 75% chance to be a "Hard difficulty" move or a 25% chance to be a "Easy difficulty" move | 
+| Difficulty |                                              Description                                               |
+|:----------:|:------------------------------------------------------------------------------------------------------:| 
+|    Easy    |                           AI's move is decided solely based on Math.random()                           | 
+|    Hard    |                           AI's move is decided through the minimax algorithm                           |
+|   Normal   | AI's move has 75% chance to be a "Hard difficulty" move or a 25% chance to be a "Easy difficulty" move | 
+| *number*   |       0.0 to 1.0 - chance in % to to do a "Hard difficulty" instead of an "Easy difficulty" move       | 
 
 ##### [DEMO](http://marianoheller.github.io/tic-tac-toe)
 
@@ -26,11 +27,11 @@ const nextMove = ComputerMove( board, symbols, difficulty );      //returns a Nu
 
 This module computes the best move to be made by the computer.
 
-| Inputs        | Description           |
-|:-------------:|:-------------:| 
-| symbols | Object with **huPlayer** and **aiPlayer** symbol.  |
-| board      | Array representing the board. *Empty* squares should have the value of the index numer in the respective element. | 
-| difficulty      |  "Easy"\|"Normal"\|"Hard"  | 
+|   Inputs   |                                                    Description                                                    |
+|:----------:|:-----------------------------------------------------------------------------------------------------------------:| 
+| symbols    |                                 Object with **huPlayer** and **aiPlayer** symbol.                                 |
+|   board    | Array representing the board. *Empty* squares should have the value of the index numer in the respective element. | 
+| difficulty |                             "Easy", "Normal", "Hard" or *number* between 0.0 and 1.0                              | 
 
 *Example:*
 ```javascript
